@@ -13,10 +13,13 @@
 
 Route::get('/', function () {
 
-    echo '<pre>';print_r($_SERVER);echo'</pre>';
-    //return view('welcome');
+    //echo '<pre>';print_r($_SERVER);echo'</pre>';
+    return view('welcome');
 });
 
 
 Route::get('/user/add','UserController@add');
 Route::get('/test/redis','UserController@redisTest');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
